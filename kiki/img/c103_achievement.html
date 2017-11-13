@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Untitled Document</title>
+<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../css/style.css"> 
+<link rel="stylesheet" type="text/css" href="./css/kiki_style.css">
+<script language="JavaScript">
+function clickshow(num){
+ menu = document.getElementById("block"+num);
+ if( menu != null && typeof menu != "undefined" )
+  {
+   if (menu.style.display=="block"){
+   menu.style.display="none"; 
+  }
+ else{
+  menu.style.display="block";
+  }
+ }
+}
+window.addEventListener("DOMContentLoaded", function(){
+//	document.getElementById("section1b").style.display = "block";
+	var classDivs = document.getElementsByClassName("open");
+	for(var i=0; i < classDivs.length; i++){
+		classDivs[i].style.display = "block";	
+	}
+},false);
+</script> 
+<!-- Modal popup --> 
+	<script src="https://code.jquery.com/jquery-latest.js"></script> 
+	<script>
+	function wrapWindowByMask(elemId){
+		//화면의 높이와 너비를 구한다.
+		var maskHeight = $(document).height();  
+		var maskWidth = $(window).width();  
+
+		//마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채운다.
+		$('#mask').css({'width':maskWidth,'height':maskHeight});  
+
+		//애니메이션 효과 - 일단 1초동안 까맣게 됐다가 80% 불투명도로 간다.
+		// $('#mask').fadeIn(1000);      
+		$('#mask').fadeTo("slow",0.6);    
+		
+		$(".kikimodal_pop").each(function(){
+			$(this).hide();
+		});
+		
+		var d = document.querySelector(elemId);
+		console.debug("d tesT", d, elemId);
+		//kikimodal_pop 같은 거 띄운다.
+		$(elemId).show();
+	}
+
+	$(document).ready(function(){
+		//검은 막 띄우기
+		$('.openMask').click(function(e){
+			e.preventDefault();
+			//wrapWindowByMask();  다중창을 띄울때 가려준다.
+		});
+
+		//닫기 버튼을 눌렀을 때
+		$('.kikimodal_pop .close').click(function (e) {  
+		    //링크 기본동작은 작동하지 않도록 한다.
+		    e.preventDefault();  
+		    $('#mask, .kikimodal_pop').hide();  
+		});       
+
+		//검은 막을 눌렀을 때
+		$('#mask').click(function () {  
+		    $(this).hide();  
+		    $('.kikimodal_pop').hide();  
+		});      
+	});
+	</script>
+</head>
+<body>
+<div id="wrap">
+   <!-- header -->
+   <div id="header">
+     <div class="inner">
+        <h1 class="logo"><a href="#"><span>The Booky </span> 관리 시스템</a></h1>
+        <div id="gnb">
+           <ul>
+             <li><a href="#"> Administrator</a></li>
+             <li><a href="#"> I&nbsp; Logout</a></li>
+           </ul>
+        </div>
+      </div>
+      <div id="lnb">
+         <ul class="inner">
+           <li class="m01 on"><a href="#">회원관리</a></li>
+           <li class="m02"><a href="#">메인관리</a> </li>
+           <li class="m03"><a href="#">서평/독서토론 관리 </a></li>
+           <li class="m04"><a href="#">도서나눔 관리 </a> </li>
+           <li class="m05"><a href="#">토론 관리 </a> </li>
+           <li class="m06"><a href="#">커뮤니티 관리 </a> </li>
+           <li class="m07"><a href="#">신고하기 관리 </a> </li>
+           <li class="m08"><a href="#">게이미피케이션 관리 </a> </li>
+         </ul>
+      </div>
+   </div>
+   <!-- //header -->
+   <!-- container -->
+   <div id="container" class="inner">
+    <div class="page_path">
+      <a href="./index.html"><img src="../img/icon_home.png" alt="home"></a> 게이미피케이션 관리 &gt;  <span> 회원관리</span>
+    </div>
+
+      <!-- content -->
+      <div class="kiki_content">
+        <div class="kiki_conwrap">    
+            <div class="kiki_box">
+               <!-- <div class="tit_top bm20">Bookoa</div> -->
+               <div class="kiki_tabmenu">
+                  <div class="kiki_line"></div>
+                  <ul>
+                    <li><a href="./c101_dashboard.html" class=""> 대시보드 </a></li> 
+                    <li><a href="./c108_member.html" class=""> 회원관리 </a></li>   
+                    <li><a href="./c102_activities.html" class="">액티비티 관리</a></li>  
+                    <li><a href="./c103_achievement.html" class="on">업적 관리</a></li>
+                    <li><a href="./c104_badge.html" class="">뱃지 관리</a></li>
+                    <li><a href="./c105_statistics.html" class="">통계/분석</a></li>
+                    <li><a href="./c106_reward.html" class="">리워드 관리</a></li>
+                    <li><a href="./c107_set.html" class="">레벨설정</a></li>
+                  </ul>
+               </div>
+              
+               <div class="kiki_row"  style="margin-top:50px">
+                 <p class="tit">업적 관리</p>
+                 <div class="con"> 
+                   <div class="kiki_boardlist">
+                     <!-- table :액티비티 20개씩 출력 -->
+                     <table class="kiki_tblT01" cellspacing="0" cellpadding="0" border="0">
+                               <colgroup>
+                                 <col width="10%">
+                                 <col width="">
+                                 <col width="20%">
+                                 <col width="20%">
+                                 <col width="20%">
+                                </colgroup>
+                         <thead>
+                          <tr>
+                            <th>횟수</th>
+                            <th>액티비티 이름</th>
+                            <th>포인트</th>
+                            <th>뱃지</th>
+                            <th>수정/삭제</th>
+                          </tr>
+                         </thead> 
+                         <tbody>
+                           <tr>
+                            <td>1</td>
+                            <td><a href="./c103_achievement_view.html">강의 공유하기</a></td>
+                            <td>10 pts</td>
+                            <td><img src="img/badge01.png" alt="뱃지이미지"></td>
+                            <td><a href="#" class="kikibtn_modify">수정</a> &nbsp; <a href="#" class="kikibtn_del">삭제</a></td>
+                           </tr>
+                                                   
+                           <tr>
+                            <td class="nb_more">10</td>
+                            <td>친구 초대하기(10회)</td>
+                            <td>10 pts</td>
+                            <td><img src="img/badge01.png" alt="뱃지이미지"></td>
+                            <td><a href="#" class="kikibtn_modify">수정</a> &nbsp; <a href="#" class="kikibtn_del">삭제</a></td>
+                           </tr>
+                           
+                           <tr>
+                            <td>10</td>
+                            <td>친구 초대하기(10회)</td>
+                            <td>10 pts</td>
+                            <td><img src="img/badge01.png" alt="뱃지이미지"></td>
+                            <td><a href="#" class="kikibtn_modify">수정</a> &nbsp; <a href="#" class="kikibtn_del">삭제</a></td>
+                           </tr>
+                           
+                           <tr>
+                            <td>7</td>
+                            <td>게시판 글 쓰기</td>
+                            <td>10 pts</td>
+                            <td><img src="img/badge01.png" alt="뱃지이미지"></td>
+                            <td><a href="#" class="kikibtn_modify">수정</a> &nbsp; <a href="#" class="kikibtn_del">삭제</a></td>
+                           </tr>
+                           
+                           <tr>
+                            <td>10</td>
+                            <td>수강하기(10회)</td>
+                            <td>10 pts</td>
+                            <td><img src="img/badge01.png" alt="뱃지이미지"></td>
+                            <td><a href="#" class="kikibtn_modify">수정</a> &nbsp; <a href="#" class="kikibtn_del">삭제</a></td>
+                           </tr>
+                           
+                           <tr>
+                            <td>10</td>
+                            <td>로그인 하기(10회)</td>
+                            <td>10 pts</td>
+                            <td><img src="img/badge01.png" alt="뱃지이미지"></td>
+                            <td><a href="#" class="kikibtn_modify">수정</a> &nbsp; <a href="#" class="kikibtn_del">삭제</a></td>
+                           </tr>
+                           
+                           <tr>
+                            <td>5</td>
+                            <td>회원가입 하기</td>
+                            <td>10 pts</td>
+                            <td><img src="img/badge01.png" alt="뱃지이미지"></td>
+                            <td><a href="#" class="kikibtn_modify">수정</a> &nbsp; <a href="#" class="kikibtn_del">삭제</a></td>
+                           </tr>
+                           
+                           <tr>
+                            <td>10</td>
+                            <td>친구 초대하기(10회)</td>
+                            <td>10 pts</td>
+                            <td><img src="img/badge01.png" alt="뱃지이미지"></td>
+                            <td><a href="#" class="kikibtn_modify">수정</a> &nbsp; <a href="#" class="kikibtn_del">삭제</a></td>
+                           </tr>
+                           
+                           <tr>
+                            <td>7</td>
+                            <td>게시판 글 쓰기</td>
+                            <td>10 pts</td>
+                            <td><img src="img/badge01.png" alt="뱃지이미지"></td>
+                            <td><a href="#" class="kikibtn_modify">수정</a> &nbsp; <a href="#" class="kikibtn_del">삭제</a></td>
+                           </tr>
+                           
+                         </tbody>
+                      </table>  
+                      <!-- // table :액티비티 --> 
+                      <div class="kiki_paging">
+                       <a href="#"><img src="./img/icon_paging_prev.gif" alt="이전으로"></a>&nbsp; <span class="page_num"><a href="#" class="on">1</a>&nbsp;<a href="javascript:page.list(10)">2</a>&nbsp;<a href="javascript:page.list(10)">3</a>&nbsp;<a href="javascript:page.list(10)">4</a>&nbsp;<a href="javascript:page.list(10)">5</a></span>&nbsp; <a href="#"><img src="./img/icon_paging_next.gif" alt="다음으로"> </a>
+                       </div> 
+                       <!-- btnarea -->
+                       <div class="kikibtnarea text_right">
+                          <a href="./c103_achievement_write.html" class="kikibtn"> 업적 생성 </a>
+                       </div>  
+                       <!-- // btnarea -->             
+                   </div>
+
+                 </div> <!-- //.con -->
+               </div> <!-- //.kiki_row -->
+              
+            </div> <!-- //kiki_box -->      
+       </div>
+      </div>
+      <!-- //content -->
+   </div>
+   <!-- //container -->
+   <!-- footer -->
+   <div id="footer">
+     <div class="inner">
+       <p class="copy">Copyright© 2017 Chongsin.Corp All Rights Reserved. </p>
+     </div>
+   </div>
+   <!-- //footer -->    
+</div>
+
+ <!-- 모달팝업 영역 -->   
+    <div id="mask"></div>
+     <!-- 포인트 지급 회수 -->
+    <div id="kiki_mypoint" class="kikimodal_pop" style="display:none">
+        <div class="kikipanel">
+            <div class="kikipanel-heading">
+                <h3 class="kikipanel-title"> 포인트 지급 / 회수 </h3>
+                <a href="#" value="(.kikimodal_pop .close)" class="close"><img src="img/btn_close02.png" alt="닫기"></a>
+            </div>
+            <div class="kikipanel-body">
+                <form>
+                    <div class="form-group">
+                       <a href="#" class="kikibtn"> + 지급 </a> <a href="#" class="kikibtn white"> - 회수 </a>
+                    </div>
+                    <div class="form-group">
+                        <div class="tit">포인트</div>
+                        <label><input class="form-control" name="username" placeholder="" type="text"></label>
+                    </div>
+                    <div class="form-group">
+                        <div class="tit">사유</div>
+                        <label><input class="form-control" name="username" placeholder="" type="text"></label>
+                    </div> 
+                </form>   
+            </div>
+            <div class="kikipanel-footer"> <a href="#" class="kikibtn btn-cancel">취소</a><a href="#" class="kikibtn btn-ok">확인</a> </div>
+            
+        </div> <!-- // kikipanel -->
+		
+	</div>
+    <!--// 수정 -->
+    
+    
+</body>
+</html>
