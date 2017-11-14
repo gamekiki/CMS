@@ -6,9 +6,7 @@
 	$sub_menu5 = "";	// 뱃지관리
 	$sub_menu6 = "";	//통계/분석
 	$sub_menu7 = "";	//리워드 관리
-	$sub_menu8 = "";	//레벨설정
-	$sub_menu9 = "";	//미니게임
-	$sub_menu10 = "";	//상품추천		?>
+	$sub_menu8 = "";	//레벨설정	?>
 	 <div class="kiki_content">
         <div class="kiki_conwrap">    
             <div class="kiki_box">
@@ -124,7 +122,6 @@ function remove_achievement(achiSerno,achiId) {
 	    data: {
 			"achiSerno": achiSerno,
 			"achiId": achiId,
-			"appId": "<?=$kiki_appId?>",
 	    },
 	    success: function(data) {
 		  if (data.prog == "true") {
@@ -135,7 +132,7 @@ function remove_achievement(achiSerno,achiId) {
 			$('.kiki_tblT01> tbody:last').append(txt);
 	        }
 		  } else {
-			console.log("error");
+				console.log("error");
 		  }
 	    },
 	    error: function(xhr, status, error) {
@@ -180,5 +177,4 @@ function write_achievement(){
   <input type="hidden" name="achiSerno" value="">
   <input type="hidden" name="achiId" value="">
   <input type="hidden" name="achiName" value="">
-  <input type="hidden" name="appId" value="<?=$kiki_appId?>">
 </form>

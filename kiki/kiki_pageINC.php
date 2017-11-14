@@ -18,29 +18,9 @@
 	} else {
 		$block = (int)($cur_page / $page_per_block) + 1;
 	}
-
-/*	// block 만큼 페이지 고정됨
-	$first_page = ($block -1 ) * $page_per_block + 1;
-	$last_page = $block*$page_per_block; */
-// 페이지 이동시 보여지는 리스트 달라짐..
-if ($cur_page < 6) {	
+	
 	$first_page = ($block -1 ) * $page_per_block + 1;
 	$last_page = $block*$page_per_block;
-} else {
-	$first_page = ($cur_page -4 );
-//	$last_page = $cur_page + 2 ;	// 5 페이지씩
-	$last_page = $cur_page + 5 ;	// 10 페이지씩
-	if ($last_page> $totpage) {
-		$last_page = $totpage;
-	}
-}
-/*if ($last_page - $first_page < 4) {  // 5페이지씩
-	$first_page = $last_page - 4;
-} */
-if ($last_page - $first_page < 9) {
-	$first_page = $last_page - 9;
-}
-// 페이지 이동시 보여지는 리스트 달라짐..
 
 	if ($total_block <= $block) {
 		$last_page = $totpage;
@@ -65,7 +45,7 @@ if ($last_page - $first_page < 9) {
 		$direct_page = $direct_page + 1;
     };	?>
 </span>
-<?	IF ($next_page <=	$totpage and $totpage > $page_per_block) {
+<?	IF ($next_page <=	$totpage) {
 		echo ("&nbsp;<a href='Javascript:kiki_list($next_page)'><img src='./kiki/img/icon_paging_next.gif' alt='다음으로' /></a>");
 	}
 

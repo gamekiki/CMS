@@ -1,4 +1,4 @@
-<?	$save_dir="../../data";
+<?	$save_dir="../data";
     
     //파일 업로드 함수
 function upload(&$file,$limit_file_size, $folder1) {
@@ -30,7 +30,6 @@ function upload(&$file,$limit_file_size, $folder1) {
     $file_name = $new_file_name . '.' . $ext; //파일 이름뒤에 확장자를 붙인다.
     // $file_name_db = $file_name . '||' . $file['name']; //db에 저장될 화일명 예) 새파일명||원래파일명
 	$file_name_db = $file_name . '||' . $temp_name2; //db에 저장될 화일명 예) 새파일명||원래파일명
-	$file_name_db = $file_name;
 // thumbnail image
 	$re_ext = strtolower($ext);
 	$sumFile = $save_dir.'/'.$folder1.'/thumb_'.$file_name;

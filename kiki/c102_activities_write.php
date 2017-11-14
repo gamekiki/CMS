@@ -3,7 +3,6 @@
 <?php
 header('Content-Type: text/html; charset=UTF-8');
 
-	$UserID = $_COOKIE["UserID"];
 	$board = "activity";
 	include "./kiki_user.php";
 
@@ -117,7 +116,6 @@ mysqli_close($kiki_conn);
 //exit;?>
 <form name="list" method="post" action="../c102_activities.php">
   <input type="hidden" name="cur_page" value="<?=$cur_page?>">
-  <input type="hidden" name="appId" value="<?=$kiki_appId?>">
 </form>
 
 <Script language="JavaScript">

@@ -70,7 +70,7 @@
 		$minPoint = $row["minPoint"];
 		$maxPoint = $row["maxPoint"];	?>
                                <tr>
-                                <td><img src="./kiki/img/icon_level.png" alt="level"></td>
+                                <td><img src="./img/icon_level.png" alt="level"></td>
                                 <td><?=$levelId?></td>
                                 <td><?=$levelName?></td>
                                 <td><?=$minPoint?>~<?=$maxPoint?></td>
@@ -85,7 +85,7 @@
                       <!-- // table :액티비티 --> 
                        <!-- kikibtnarea -->
                        <div class="kikibtnarea text_right">
-                          <a href="javascript:modify_set();" class="kikibtn"> 수정 </a>
+                          <a href="c107_set_modify.php" class="kikibtn"> 수정 </a>
                        </div>
                        <!-- // kikibtnarea -->
            
@@ -97,12 +97,3 @@
             </div> <!-- //kiki_box -->      
        </div>
       </div>
-
-<script>
-
-function modify_set(){
-	 document.kiki_frm_sub2.method="post";
-	 document.kiki_frm_sub2.action="./c107_set_modify.php";
-     document.kiki_frm_sub2.submit();
-}
-</script>

@@ -2,15 +2,13 @@
 <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script src="./kiki/js/jui.js"></script>
 <?	$sub_menu1 = "on";	// 대시보드
-	$sub_menu2 = "";	// 회원
-	$sub_menu3 = "";	// 액티비티
-	$sub_menu4 = "";	// 업적
-	$sub_menu5 = "";	// 뱃지
+	$sub_menu2 = "";	// 회원관리
+	$sub_menu3 = "";	// 액티비티 관리
+	$sub_menu4 = "";	// 업적관리
+	$sub_menu5 = "";	// 뱃지관리
 	$sub_menu6 = "";	//통계/분석
-	$sub_menu7 = "";	//리워드
-	$sub_menu8 = "";	//레벨설정	
-	$sub_menu9 = "";	//미니게임
-	$sub_menu10 = "";	//상품추천			?>
+	$sub_menu7 = "";	//리워드 관리
+	$sub_menu8 = "";	//레벨설정	?>
       <div class="kiki_content">
         <div class="kiki_conwrap">    
             <div class="kiki_box">
@@ -336,7 +334,6 @@ if ($arr_num == 0) { ?>
   <input type="hidden" name="mon2" value="<?=$mon2?>">
   <input type="hidden" name="day2" value="<?=$day2?>">
   <input type="hidden" name="actId" value="<?=$actId?>">
-  <input type="hidden" name="appId" value="<?=$kiki_appId?>">
 </form>
 <script>
 function kiki_go_sub3(actId) {

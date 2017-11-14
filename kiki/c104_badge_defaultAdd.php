@@ -3,11 +3,8 @@
 <?php
 header('Content-Type: text/css; charset=UTF-8');
 
-	$UserID = $_COOKIE["UserID"];
 	$UserIP =  $_SERVER["REMOTE_ADDR"];
 	include "./kiki_user.php";
-
-	$kiki_appId = kiki_ischar($_REQUEST["appId"]);
 function makeZeroNumeric ($str, $num) {
 	If (strlen($str) < $num) {
 		$no = $num - strlen($str);
@@ -78,8 +75,8 @@ $code1 = "bag_";
 $new_badgesImg =  $badgeId."_". $badgesImg . "|| ". $badgesImg ;
 
 // 이미지 복사
-	$oldfile = "../../data/defbadge/". $badgesImg;
-	$newfile = "../../data/badge/".$developerId."/".$kiki_appId."/". $badgeId."_". $badgesImg;
+	$oldfile = "../data/defbadge/". $badgesImg;
+	$newfile = "../data/badge/".$developerId."/".$kiki_appId."/". $badgeId."_". $badgesImg;
 
 //echo "check 1 = $oldfile  :: ";
 	if(file_exists($oldfile)) {
@@ -88,8 +85,8 @@ $new_badgesImg =  $badgeId."_". $badgesImg . "|| ". $badgesImg ;
     } 
 
 //// 썸네일 복사 처리...
-	$thumb_oldfile = "../../data/defbadge/thumb_". $badgesImg;
-	$thumb_newfile = "../../data/badge/".$developerId."/".$kiki_appId."/thumb_". $badgeId."_". $badgesImg;
+	$thumb_oldfile = "../data/defbadge/thumb_". $badgesImg;
+	$thumb_newfile = "../data/badge/".$developerId."/".$kiki_appId."/thumb_". $badgeId."_". $badgesImg;
 // echo "check 2  :: ";
     if(file_exists($thumb_oldfile)) {
 // echo "copy 2 <br>";

@@ -6,9 +6,7 @@
 	$sub_menu5 = "";	// 뱃지관리
 	$sub_menu6 = "";	//통계/분석
 	$sub_menu7 = "";	//리워드 관리
-	$sub_menu8 = "";	//레벨설정
-	$sub_menu9 = "";	//미니게임
-	$sub_menu10 = "";	//상품추천		?>
+	$sub_menu8 = "";	//레벨설정	?>
 	  <div class="kiki_content">
         <div class="kiki_conwrap">    
             <div class="kiki_box">
@@ -130,7 +128,6 @@ function remove_activity(actSerno,actId) {
 	    data: {
 			"actSerno": actSerno,
 			"actId": actId,
-			"appId": "<?=$kiki_appId?>",
 	    },
 	    success: function(data) {
 		  if (data.prog == "true") {
@@ -174,5 +171,4 @@ function write_activity(){
 <form name="kiki_frm_sub" method="post">
   <input type="hidden" name="cur_page" value="<?=$cur_page?>">
   <input type="hidden" name="actSerno" value="">
-  <input type="hidden" name="appId" value="<?=$kiki_appId?>">
 </form>

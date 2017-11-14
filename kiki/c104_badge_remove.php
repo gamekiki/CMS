@@ -1,5 +1,4 @@
 <?php
-	$UserID = $_COOKIE["UserID"];
 	include "./kiki_user.php";
 	include "./file_library.php";
 

@@ -3,7 +3,6 @@
 <?php
 header('Content-Type: text/html; charset=UTF-8');
 
-	$UserID = $_COOKIE["UserID"];
 	include "./kiki_user.php";
 	$board = "activity";
 	
@@ -30,7 +29,6 @@ if($actName and $actId) {
 	$SQL .= " WHERE developerId = '$developerId'";
 	$SQL .= " and actId = '$actId' ";
 	$SQL .= " and appId  = '$kiki_appId' " ;
-//echo "user = $UserID <BR>";
 //echo $SQL . "<BR>";
 //exit;
 /* */	$result = mysqli_query($kiki_conn, $SQL);
@@ -150,7 +148,6 @@ if($actName and $actId) {
 mysqli_close($kiki_conn);	?>
 <form name="list" method="post" action="../c102_activities.php">
   <input type="hidden" name="cur_page" value="<?=$cur_page?>">
-  <input type="hidden" name="appId" value="<?=$kiki_appId?>">
 </form>
 
 <Script language="JavaScript">

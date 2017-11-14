@@ -5,9 +5,7 @@
 	$sub_menu5 = "";	// 뱃지관리
 	$sub_menu6 = "";	//통계/분석
 	$sub_menu7 = "";	//리워드 관리
-	$sub_menu8 = "";	//레벨설정
-	$sub_menu9 = "";	//미니게임
-	$sub_menu10 = "";	//상품추천		?>
+	$sub_menu8 = "";	//레벨설정	?>
 	  <div class="kiki_content">
         <div class="kiki_conwrap">    
             <div class="kiki_box">

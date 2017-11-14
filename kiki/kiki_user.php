@@ -3,11 +3,10 @@
 $kiki_conn->set_charset("utf8");
 
 $passadmin = "anjfkfRk"	;	
-$this_domain = "gamebin.iptime.org";
+$this_domain = "thebooky.co.kr";
 $adm_activity = "act_adminmade";
-
-$kiki_appId = kiki_ischar($_POST["appId"]);
-$developerId = $UserID ;
+$kiki_appId = "app_BXQ9r8cJ00000";
+$developerId = "booky";
 
 function kiki_isnumb($str) { 
    if(!is_numeric($str)) {

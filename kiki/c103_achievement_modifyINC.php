@@ -48,9 +48,7 @@ $(document).ready(function(){
 	$sub_menu5 = "";	// 뱃지관리
 	$sub_menu6 = "";	//통계/분석
 	$sub_menu7 = "";	//리워드 관리
-	$sub_menu8 = "";	//레벨설정
-	$sub_menu9 = "";	//미니게임
-	$sub_menu10 = "";	//상품추천		?>
+	$sub_menu8 = "";	//레벨설정		?>
 	  <div class="kiki_content">
         <div class="kiki_conwrap">    
             <div class="kiki_box">
@@ -166,7 +164,6 @@ $(document).ready(function(){
     <input type="hidden" name="rewardBadge" value="<?=$kiki_badgeId?>">
     <input type="hidden" name="cur_page" value="<?=$cur_page?>">
 	<input type="hidden" name="achiId" value="<?=$achiId?>"> 
-	<input type="hidden" name="appId" value="<?=$kiki_appId?>">
 </form>
                    <!-- btnarea -->
                    <div class="kikibtnarea text_right">
@@ -239,6 +236,7 @@ function select_activity(actId, actname) {
    $("#acti_btn_"+actId).attr('class','kikibtn');
 }
 
+
 function chk_select_activity() {
    var actId = $("input:hidden[name=kiki_actId]").val();
    if (!actId) {
@@ -256,7 +254,7 @@ function chk_select_activity() {
         <div class="kikipanel">
             <div class="kikipanel-heading">
                 <h3 class="kikipanel-title"> 액티비티 선택 </h3>
-                <a href="#" value="(.kikimodal_pop .close)" class="close"><img src="./kiki/img/btn_close02.png" alt="닫기"></a>
+                <a href="#" value="(.kikimodal_pop .close)" class="close"><img src="img/btn_close02.png" alt="닫기"></a>
             </div>
             <div class="kikipanel-body">
                 <div class="kiki_boardlist hfix">

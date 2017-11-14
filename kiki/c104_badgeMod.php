@@ -1,8 +1,6 @@
 <?php  header('Access-Control-Allow-Origin:http://gamebin.iptime.org'); ?>
 <?php header('Access-Control-Allow-Credentials: true'); ?>
 <?php header('charset=UTF-8');
-	
-	$UserID = $_COOKIE["UserID"];
 	include "./kiki_user.php";
 	$badgeName = kiki_ischar($_REQUEST["badge_name"]);
 	$badgeId = kiki_ischar($_REQUEST["badgeId"]);

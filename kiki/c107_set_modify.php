@@ -5,8 +5,7 @@
 </head>
 
 <body>
-<?	$UserID = $_COOKIE["UserID"];
-	include "./kiki_user.php";
+<?	include "./kiki_user.php";
 
 $sRef = $_SERVER['HTTP_REFERER'];
 if (strlen($sRef) > 0 ) {
@@ -24,6 +23,7 @@ If ($SERVER_NAME <> $sRef) {
 	echo "</script>";
 	exit;
 }
+	$UserID = $_COOKIE["UserID"];
 	$board = kiki_ischar($_POST["board"]);
 $UserIP =  $_SERVER["REMOTE_ADDR"];
 

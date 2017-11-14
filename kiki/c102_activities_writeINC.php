@@ -1,14 +1,12 @@
  <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
 <?	$sub_menu1 = "";	// 대시보드
 	$sub_menu2 = "";	// 회원관리
-	$sub_menu3 = "on";	// 액티비티
-	$sub_menu4 = "";	// 업적
-	$sub_menu5 = "";	// 뱃지
+	$sub_menu3 = "on";	// 액티비티 관리
+	$sub_menu4 = "";	// 업적관리
+	$sub_menu5 = "";	// 뱃지관리
 	$sub_menu6 = "";	//통계/분석
-	$sub_menu7 = "";	//리워드
-	$sub_menu8 = "";	//레벨설정
-	$sub_menu9 = "";	//미니게임
-	$sub_menu10 = "";	//상품추천		?>
+	$sub_menu7 = "";	//리워드 관리
+	$sub_menu8 = "";	//레벨설정	?>
 	  <div class="kiki_content">
         <div class="kiki_conwrap">    
             <div class="kiki_box">
@@ -117,7 +115,6 @@ mysqli_close($kiki_conn);	?>
   <input type="hidden" name="rew_point_restrict" value="1">
   <input type="hidden" name="rewardBadge">
   <input type="hidden" name="cur_page" value="<?=$cur_page?>">
-  <input type="hidden" name="appId" value="<?=$kiki_appId?>">
 </form>
                      </div> 
                      <!-- // kiki_tbview -->

@@ -73,7 +73,6 @@ mysqli_close($kiki_conn);
 //exit;?>
 <form name="list" method="post" action="../c103_achievement.php">
   <input type="hidden" name="cur_page" value="<?=$cur_page?>">
-  <input type="hidden" name="appId" value="<?=$kiki_appId?>">
 </form>
 
 <Script language="JavaScript">
